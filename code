@@ -10,8 +10,7 @@ def newton_estimate(radicand, accuracy):
 #    root = radicand / 2                             # initial estimate is set at 1/2 the radicand
     root = log(radicand)                            # inital estimate is set at natural log of radicand
     limit = 0                                       # loop limiter
-    while abs((root ** 2 - radicand)) > (1 / (10 ** accuracy)) and limit < 1000000:
-#   loops up to limit while accuracy not yet reached
+    while abs((root ** 2 - radicand)) > (1 / (10 ** accuracy)) and limit < 1000000:  # loops up to limit while accuracy not yet reached
         root = (root + radicand / root) / 2         # Newton's iterative method
         limit += 1                                  # increments limiter
     return root, limit
